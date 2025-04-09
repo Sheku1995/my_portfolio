@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sheku1995.github.io/my_portfolio/sitemap.xml
