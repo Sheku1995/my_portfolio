@@ -59,9 +59,7 @@ body{
   text-decoration: none;
 }
 
-/* 
- * text animation
- */
+
  .welcome-text {
   font-size: 3rem;
   font-weight: bold;
@@ -107,24 +105,6 @@ body{
   width: 55%;
   margin: auto;
 }
-#icons-container{
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 35px auto;
-  background-color: gray;
-  padding: 5px;
-  border-radius: 20px;
-}
-.icons{
-  font-size: 30px;
-  cursor: pointer;
-}
-.icons-link{
-  text-decoration: none;
-  color: black;
-}
 #work{
   background-color: rgb(47, 45, 45);
 }
@@ -148,7 +128,38 @@ body{
 }
 .icon-images:hover{
   transform: scale(1.4);
-
+}
+.project-card{
+  width: 320px;
+  height: 380px;
+  border-radius: 10px;
+  padding: 5px;
+  border: 2px solid #FFB433;
+  text-align: center;
+  background-color: rgb(29, 24, 24);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.project-image{
+  width: 100%;
+  height: 190px;
+  border-radius: 10px;
+}
+.project-header{
+  font-size: 1.5rem;
+  margin: 10px 0px;
+  color: #FFB433;
+}
+.project-btn{
+  background-color: #FFB433;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
 }
 #freelance-icons{
   display: flex;
@@ -244,13 +255,6 @@ body{
   align-items: center;
   gap: 20px;
   margin-bottom: 30px;
-}
-.project-imgs{
-  width: 300px;
-  height: 300px;
-  border-radius: 10px;
-  padding: 5px;
-  border: 2px solid #FFB433;
 }
 #see-more-btn{
   background-color: #FFB433;
@@ -366,7 +370,16 @@ footer{
    }
    .service-card{
      width: 300px;
-     height: 350px;
+     height: 250px;
+   }
+   #projects-container{
+     width: 90%;
+     grid-template-columns: repeat(2, auto);
+     grid-gap: 20px;
+   }
+   .project-card{
+    width: 240px;
+    height: fit-content;
    }
   }
    

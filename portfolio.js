@@ -1,4 +1,4 @@
-//Welcome text animation
+
 const welcomeText = document.getElementById('welcomeText');
 const skillsText = document.getElementById('skillsText');
 
