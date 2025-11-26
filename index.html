@@ -28,10 +28,24 @@
   <!-- Title -->
   <title>Sheku Alpha Kamara</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Favicon and manifest -->
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+  <meta name="theme-color" content="#ffb703">
+  <!-- SVG favicon -->
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="mask-icon" href="/images/favicon.svg" color="#ffb703">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   
   <!-- Bootstrap Icons -->
@@ -40,195 +54,308 @@
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="portfolio.css">
+  <!-- Custom CSS (provided by dev server) -->
+  <!-- styles are now imported from the module script in dev/build -->
+  <!-- Fallback stylesheet for direct file:// viewing or if modules aren't served by a dev server. -->
+  <link rel="stylesheet" href="/portfolio.css" id="fallback-stylesheet">
 </head>
-<body>
-  <header>
-    <nav id="nav-bar">
-      <h4 id="name-icon"><span id="f-letter">S</span>heku A. <span id="l-letter">K</span>amara</h4>
-      <ul id="nav-ul">
-        <a class="header-links" href="#introduction"> <li class="nav-li"></i> Home</li></a>
-        <a class="header-links" href="#about"><li class="nav-li">About</li></a>
-        <a class="header-links" href="#projects"><li class="nav-li">Projects</li></a>
-        <a class="header-links" href="#services"><li class="nav-li">Services</li></a>
-        <a class="header-links" href="#contact"><li class="nav-li">Contact</li></a>
+<body class="theme-light">
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="#home" aria-label="Home - Sheku Alpha Kamara">Sheku<span class="logo-accent">.</span></a>
+      <nav class="primary-nav" role="navigation" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="btn icon-btn" aria-pressed="false" aria-label="Toggle color theme">🌙</button>
+        <button id="menu-toggle" class="btn icon-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <ul class="mobile-nav-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
-    <!-- Bootstarp nav bar for small screen devices-->
-    <nav class="navbar bg-black fixed-top d-sm-none">
-      <div class="container-fluid">
-        <h4 id="name-icon"><span id="f-letter">S</span>heku A. <span id="l-letter">K</span>amara</h4>
-        <button class="navbar-toggler bg-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end bg-black" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: goldenrod">Menu</h5>
-            <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#introduction" style="color: goldenrod">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about" style="color: goldenrod">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#projects" style="color: goldenrod">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#services" style="color: goldenrod">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact" style="color: goldenrod">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
+    </div>
   </header>
-  <main>
-    <section id="introduction">
-      <h1 id="welcomeText" class="welcome-text"></h1>
-      <h2 id="skillsText" class="line"></h2>
-      <div id="icons-container">
-        <a href="https://wa.me/23276849420" target="_blank" class="icons-link" title="Chat me on whatsapp"><i class="bi bi-whatsapp icons"></i></a>
-          <a href="https://www.github.com/sheku1995" target="_blank" class="icons-link" title="Check up my github page"><i class="bi bi-github icons"></i></a>
-        <a href="https://www.instagram.com/yhungpope" target="_blank" class="icons-link" title="Click to open my insta page"><i class="bi bi-instagram icons"></i></a>
-        <a href="https://www.x.com/sheku_alpha" target="_blank" class="icons-link" title="Click to open my X page"><i class="bi bi-twitter icons"></i></a>
-        <a href="https://www.facebook.com/sheku.kamara.520" target="_blank" class="icons-link" title="You can also messsage me on facebook"><i class="bi bi-facebook icons"></i></a>
-      </div>
-    </section>
-    <section id="work">
-        <h2 id="work-header">I am a freelance at 👇</h2>
-        <div id="freelance-icons">
-        <a href="https://www.upwork.com/freelancers/~012c341cbcb6c1d8a3" target="_blank"><img class="icon-images" src="images/upwork-svgrepo-com.svg" alt="Upwork icon"></a>
-        <img src="images/fiverr-svgrepo-com.svg" alt="Fiverr icon" class="icon-images">
-        <img src="images/freelancer-svgrepo-com copy.svg" alt="Freelancer icon" class="icon-images">
-      </div>
-    </section>
-    <section id="about">
-      <div id="about-me" class="my-section" data-aos="zoom-out" data-aos-duration="1000">
-      <h2 id="about-me-header"> <u><span id="f-letter">S</span>heku <span id="f-letter">A</span>lpha <span id="f-letter">K</span>amara</u></h2>
-      <h4>I am a front-end web developer</h4>
-      <p class="para">I'm a passionate self-taught Front-End Developer who made the bold decision to switch careers and dive headfirst into the world of web development. With an unshakable drive to create and a hunger for knowledge, I dedicated myself to mastering the craft of building modern, user-friendly websites.</p>
-      <p class="para">Over time, I’ve gained solid hands-on experience in HTML, CSS, JavaScript, SCSS, Bootstrap, and React, which I use to bring ideas to life through clean, interactive, and fully responsive websites. My journey may have started outside the traditional path, but my results speak for themselves—projects that are both functional and visually engaging</p>
-        <p class="para">I thrive on solving problems, embracing challenges, and constantly improving my skill set to stay ahead in the fast-evolving tech landscape. Whether it's optimizing performance, enhancing user experience, or delivering pixel-perfect designs, I approach every project with creativity, precision, and professionalism.</p>
-      <p class="para">As I continue to grow and evolve in this dynamic field, I am excited to collaborate with like-minded individuals and organizations that share my passion for innovation and excellence. Let's connect and explore how we can create something amazing together!</p>
-      <a href="https://wa.me/23276849420" target="_blank"> <button id="contact-me-btn">Contact me <i class="bi bi-phone"></i></button></a>
-      <div>
-      <img src="images/g1.jpg" alt="My photo" id="my-photo" class="my-section" data-aos="flip-left" data-aos-duration="1000">
-      </div>
-    </div>
-    <h3 id="skills-header"> <u>My Skills</u></h3>
-    <div id="skills-container">
-      <img src="images/html-5-svgrepo-com.svg" alt="HTML icon" class="my-section svg-imgs" data-aos="flip-right" data-aos-duration="1000" id="html-icon">
-      <img src="images/css-3-svgrepo-com.svg" alt="CSS icon" class="my-section  svg-imgs" data-aos="flip-right" data-aos-duration="1000" id="css-icon">
-      <img src="images/java-script-logo-svgrepo-com.svg" alt="JavaScript icon" class="my-section svg-imgs white-bg" data-aos="flip-right" data-aos-duration="1000" id="js-icon">
-      <img src="images/bootstrap-fill-svgrepo-com.svg" alt="Bootstrap icon" class="my-section svg-imgs white-bg" data-aos="flip-right" data-aos-duration="1000" id="bootstrap-icon">
-      <img src="images/reactjs-svgrepo-com.svg" alt="React icon" class="my-section svg-imgs" data-aos="flip-right" data-aos-duration="1000" id="react-icon">
-      <img src="images/sass-svgrepo-com.svg" alt="Sass icon" class="my-section svg-imgs" data-aos="flip-right" data-aos-duration="1000" id="sass-icon">
-    </div>
-    </section>
-    <section id="projects">
-      <h3 id="projects-header">My Projects</h3>
-      <div id="projects-container">
-        <div class="project-card" data-aos="fade-up" data-aos-duration="1000">
-          <img src="WE.png" alt="Weather Project" class="project-image">
-          <h4 class="project-header">Weather Vibe</h4>
-          <p class="para">A weather application that provides real-time weather updates, and five days weather forecast.</p>
-          <a href="https://sheku1995.github.io/local-weather-app/" target="_blank"><button class="project-btn">View Project</button></a>
-        </div>
-        <div class="project-card" data-aos="fade-up" data-aos-duration="1000">
-          <img src="BC.png" alt="Bootcamp Project" class="project-image">
-          <h4 class="project-header">Bootcamp website</h4>
-          <p class="para">A local bootcamp website that provides information about coding bootcamps.</p>
-          <a href="https://sheku1995.github.io/salone-coding-academy/" target="_blank"><button class="project-btn">View Project</button></a>
-        </div>
-        <div class="project-card" data-aos="fade-up" data-aos-duration="1000">
-          <img src="to-do-list.png" alt="Todo App Project" class="project-image">
-          <h4 class="project-header">Todo App</h4>
-          <p class="para">A simple todo application built with JavaScript and local storage.</p>
-          <a href="https://sheku1995.github.io/Todo-Listign-App/" target="_blank"><button class="project-btn">View Project</button></a>
-        </div>
-        <div class="project-card" data-aos="fade-up" data-aos-duration="1000">
-          <img src="CT.png" alt="Calculator Project" class="project-image">
-          <h4 class="project-header">Local Chatbot</h4>
-          <p class="para">A simple chatbot application built with JavaScript.</p>
-          <a href="https://sheku1995.github.io/my-ai-chatbot/" target="_blank"><button class="project-btn">View Project</button></a>
 
-        </div>
-      </div>
-      <div id="see-more-container">
-        <a href="https://codepen.io/Sheku1995" target="_blank"><button id="see-more-btn">See More</button></a>
-      </div>
-    </section>
-    <section id="services">
-      <h3 id="services-header">My Services</h3>
-      <div id="services-container">
-        <div class="service-card" data-aos="zoom-in-down" data-aos-duration="1000">
-          <p> <img src="images/undraw_static-website_x3tn.svg" alt="Web Icon" class="services-icon"></p>
-          <h4>Web Development</h4>
-          <p class="para">Creating responsive and user-friendly websites using HTML, CSS, and JavaScript.</p>
-        </div>
-        <div class="service-card" data-aos="fade-up" data-aos-duration="1000">
-          <p> <img src="images/undraw_designer_efwz.svg" alt="UI Icon" class="services-icon"></p>
-          <h4>UI/UX Design</h4>
-          <p class="para">Designing intuitive and engaging user interfaces for web applications.</p>
-        </div>
-        <div class="service-card" data-aos="fade-up" data-aos-duration="1000">
-          <p> <img src="images/undraw_web-search_9qqc.svg" alt="SEO Icon" class="services-icon"></p>
-          <h4>SEO Optimization</h4>
-          <p class="para">Improving website visibility and ranking on search engines.</p>
-        </div>
-        <div class="service-card" data-aos="zoom-in-up" data-aos-duration="1000">
-          <p> <img src="images/undraw_educator_6dgp.svg" alt="Teaching Icon" class="services-icon"></p>
-          <h4>Teaching</h4>
-          <p class="para">
-            Sharing knowledge and skills in web development through tutorials and workshops.
+  <main id="main">
+    <section id="home" class="hero section" aria-label="Introduction">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">Hi, I'm Sheku</h1>
+          <p class="hero-sub">Front-end developer building modern, accessible, and high-performance web experiences.</p>
+          <p class="hero-ctas">
+            <a class="btn primary" href="#projects"><i class="bi bi-eye" aria-hidden="true"></i> See Work</a>
+            <a class="btn ghost" href="#contact"><i class="bi bi-person-plus" aria-hidden="true"></i> Hire Me</a>
+            <a class="btn outline resume-btn" href="/resume.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-download" aria-hidden="true"></i> Resume</a>
           </p>
-      </div>  
-    </section>
-    <section id="contact">
-      <h3 id="contact-header">Contact</h3>
-      <div id="contact-container">
-      <div id="contact-info">
-        <h3 class="contact-header2">Get in Touch</h3>
-        <p> <span class="b-i"><i class="bi bi-envelope"></i></span> Have Question?</i></p>
-        <p>I am here at your servive</p>
-        <p>You can reach me via <a href="mailto:kamarasheku1@outlook.com" >Email</a></p>
-        <p> <span class="b-i"><i class="bi bi-geo-alt-fill"></i></span>You can locate me at:</p>
-        <p>Goderich, Freetown</p>
-        <p>Sierra Leone</p>
+          <div class="social-links" aria-hidden="false">
+            <a href="https://www.github.com/sheku1995" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/sheku-alpha-kamara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/23276849420" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <svg class="decor-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#ffb703"/><stop offset="100%" stop-color="#fb8500"/></linearGradient>
+            </defs>
+            <g class="float">
+              <circle cx="60" cy="60" r="44" fill="url(#g2)" />
+            </g>
+          </svg>
+          <picture>
+            <source srcset="images/optimized/g1-1200.webp" type="image/webp" media="(min-width:800px)">
+            <img src="images/g1.jpg" alt="Portrait of Sheku Alpha Kamara" class="hero-photo" loading="lazy">
+          </picture>
+        </div>
       </div>
-      
-      <div id="contact-form">
-        <h3 class="contact-header2">Contact Me</h3>
-        <p class="para">If you have any questions or would like to discuss a project, feel free to reach out!</p>
-        <form id="contact-form" action="https://formspree.io/f/mldjoyao" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button id="msg-btn" type="submit">Send Message</button>
+    </section>
+
+    <section id="about" class="section panel" aria-label="About me">
+      <div class="container grid about-grid">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p class="lead">Self-taught front-end developer focused on performance, accessibility, and delightful UI.</p>
+          <p>I build responsive interfaces with HTML, CSS/SCSS and JavaScript. I love solving problems and shipping production-ready code.</p>
+          <p>Available for freelance work and collaborations. Based in Freetown, Sierra Leone.</p>
+          <p><a class="btn outline" href="mailto:kamarasheku1@outlook.com">Email Me</a></p>
+        </div>
+        <div class="about-stats">
+          <ul class="skills-list">
+            <li>HTML & CSS</li>
+            <li>JavaScript (ES6+)</li>
+            <li>React</li>
+            <li>SCSS</li>
+            <li>Performance & SEO</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section panel" aria-label="Experience">
+      <div class="container">
+        <h2 class="section-title"><i class="bi bi-tools" aria-hidden="true"></i> Experience & Tools</h2>
+        <p class="lead">Technologies and platforms I use regularly in projects — from rapid prototypes to production apps.</p>
+        <div class="cards-grid experience-grid">
+          <div class="card experience-card">
+            <div class="card-head"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i></div>
+            <h4>Firebase</h4>
+            <p class="muted">Realtime database, Firestore, Authentication, Hosting, and cloud functions — used to add realtime features, serverless backends, and auth for prototypes and production apps.</p>
+            <div class="exp-tags">
+              <span class="tag"><i class="bi bi-database"></i> Firestore</span>
+              <span class="tag"><i class="bi bi-shield-lock"></i> Auth</span>
+              <span class="tag"><i class="bi bi-cloud-upload"></i> Hosting</span>
+            </div>
+          </div>
+          <div class="card experience-card">
+            <div class="card-head"><i class="bi bi-window-sidebar" aria-hidden="true"></i></div>
+            <h4>Electron</h4>
+            <p class="muted">Desktop application development with Electron — packaging web apps into cross-platform native apps and integrating native OS features when needed.</p>
+            <div class="exp-tags">
+              <span class="tag"><i class="bi bi-window"></i> Desktop</span>
+              <span class="tag"><i class="bi bi-box-seam"></i> Packaging</span>
+            </div>
+          </div>
+          <div class="card experience-card">
+            <div class="card-head"><i class="bi bi-bootstrap-fill" aria-hidden="true"></i></div>
+            <h4>Bootstrap & UI</h4>
+            <p class="muted">Rapid responsive UI composition and utility-driven prototyping when projects require fast turnarounds.</p>
+            <div class="exp-tags">
+              <span class="tag"><i class="bi bi-phone"></i> Responsive</span>
+              <span class="tag"><i class="bi bi-brush"></i> Components</span>
+            </div>
+          </div>
+          <div class="card experience-card">
+            <div class="card-head"><i class="bi bi-code-slash" aria-hidden="true"></i></div>
+            <h4>Modern JS</h4>
+            <p class="muted">ES6+, module tooling, and accessibility-first interactions to deliver fast, maintainable front-ends.</p>
+            <div class="exp-tags">
+              <span class="tag"><i class="bi bi-terminal-fill"></i> ES6+</span>
+              <span class="tag"><i class="bi bi-gear-fill"></i> Tooling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section panel" aria-label="Projects">
+      <div class="container">
+        <h2 class="section-title"><i class="bi bi-kanban" aria-hidden="true"></i> Selected Projects</h2>
+        <div class="projects-grid" id="projects-grid">
+          <!-- Project cards; kept existing links and descriptions -->
+          <article class="project-card">
+            <img src="WE.png" alt="Weather Vibe screenshot" loading="lazy">
+            <div class="project-overlay" aria-hidden="true">
+              <p class="overlay-text">Real-time weather updates with a five-day forecast.</p>
+              <a class="btn small overlay-link" href="https://sheku1995.github.io/local-weather-app/" target="_blank" rel="noopener noreferrer">Open Demo</a>
+            </div>
+            <div class="project-body">
+              <h3>Weather Vibe</h3>
+              <div class="project-meta">
+                <span class="tag small"><i class="bi bi-cloud-sun"></i> OpenWeather API</span>
+                <span class="tag small"><i class="bi bi-code-slash"></i> JavaScript</span>
+              </div>
+              <p>A weather application that provides real-time weather updates and a five-day forecast.</p>
+              <a class="btn small" href="https://sheku1995.github.io/local-weather-app/" target="_blank" rel="noopener noreferrer">View Project <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="BC.png" alt="Bootcamp website screenshot" loading="lazy">
+            <div class="project-overlay" aria-hidden="true">
+              <p class="overlay-text">Informational site for local coding bootcamps and events.</p>
+              <a class="btn small overlay-link" href="https://sheku1995.github.io/salone-coding-academy/" target="_blank" rel="noopener noreferrer">Open Demo</a>
+            </div>
+            <div class="project-body">
+              <h3>Bootcamp Website</h3>
+              <div class="project-meta">
+                <span class="tag small"><i class="bi bi-file-earmark-code"></i> HTML/CSS</span>
+                <span class="tag small"><i class="bi bi-paint-bucket"></i> Design</span>
+              </div>
+              <p>Local bootcamp website that provides information about coding bootcamps.</p>
+              <a class="btn small" href="https://sheku1995.github.io/salone-coding-academy/" target="_blank" rel="noopener noreferrer">View Project <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="to-do-list.png" alt="Todo app screenshot" loading="lazy">
+            <div class="project-overlay" aria-hidden="true">
+              <p class="overlay-text">Small productivity app using localStorage and simple state management.</p>
+              <a class="btn small overlay-link" href="https://sheku1995.github.io/Todo-Listign-App/" target="_blank" rel="noopener noreferrer">Open Demo</a>
+            </div>
+            <div class="project-body">
+              <h3>Todo App</h3>
+              <div class="project-meta">
+                <span class="tag small"><i class="bi bi-list-task"></i> Local Storage</span>
+                <span class="tag small"><i class="bi bi-brush"></i> UI</span>
+              </div>
+              <p>Simple todo application with local storage.</p>
+              <a class="btn small" href="https://sheku1995.github.io/Todo-Listign-App/" target="_blank" rel="noopener noreferrer">View Project <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="CT.png" alt="Chatbot screenshot" loading="lazy">
+            <div class="project-overlay" aria-hidden="true">
+              <p class="overlay-text">A lightweight local chatbot built with vanilla JavaScript.</p>
+              <a class="btn small overlay-link" href="https://sheku1995.github.io/my-ai-chatbot/" target="_blank" rel="noopener noreferrer">Open Demo</a>
+            </div>
+            <div class="project-body">
+              <h3>Local Chatbot</h3>
+              <div class="project-meta">
+                <span class="tag small"><i class="bi bi-robot"></i> JavaScript</span>
+                <span class="tag small"><i class="bi bi-chat-dots"></i> NLP (rules)</span>
+              </div>
+              <p>Chatbot built with JavaScript.</p>
+              <a class="btn small" href="https://sheku1995.github.io/my-ai-chatbot/" target="_blank" rel="noopener noreferrer">View Project <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section panel" aria-label="Services">
+      <div class="container">
+        <h2 class="section-title"><i class="bi bi-stars" aria-hidden="true"></i> Services</h2>
+        <div class="cards-grid">
+          <div class="card service-card">
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i class="bi bi-laptop"></i></span>
+              <h4>Web Development</h4>
+            </div>
+            <p>Responsive, accessible websites focused on performance and progressive enhancement.</p>
+          </div>
+          <div class="card service-card">
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i class="bi bi-palette"></i></span>
+              <h4>UI/UX Design</h4>
+            </div>
+            <p>Intuitive interfaces and rapid prototyping to validate UX before development.</p>
+          </div>
+          <div class="card service-card">
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i class="bi bi-speedometer2"></i></span>
+              <h4>SEO & Performance</h4>
+            </div>
+            <p>Optimize for speed, accessibility, and discoverability with measurable improvements.</p>
+          </div>
+          <div class="card service-card">
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i class="bi bi-people"></i></span>
+              <h4>Workshops</h4>
+            </div>
+            <p>Hands-on training and mentorship in modern web development practices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section panel" aria-label="Contact">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h2><i class="bi bi-envelope-paper" aria-hidden="true"></i> Contact</h2>
+          <p class="lead">Based in Goderich, Freetown — available for freelance work.</p>
+          <p><strong>Email:</strong> <a href="mailto:kamarasheku1@outlook.com">kamarasheku1@outlook.com</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/23276849420">+232 76 849420</a></p>
+          <p class="muted">Prefer a quick chat? Send a short message — I usually respond within 24 hours.</p>
+        </div>
+
+        <form id="contact-form" action="https://formspree.io/f/mldjoyao" method="POST" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" inputmode="email" placeholder="you@domain.com" required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Briefly tell me about your project or question" required aria-required="true"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send Message</button>
+            <div id="contact-status" class="contact-status" role="status" aria-live="polite"></div>
+          </div>
         </form>
       </div>
-    </div>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2024 Sheku Alpha Kamara. All rights reserved.</p>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 Sheku Alpha Kamara</p>
+    </div>
   </footer>
-  <script src="portfolio.js"></script>
-<!-- Bootstrap JS CDN -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script type="module" src="/src/main.js"></script>
+  <script>
+    // If user opens index.html via file://, Vite modules won't load and you'll see MIME errors.
+    function ensureFallbackStyles() {
+      const fallback = document.getElementById('fallback-stylesheet');
+      if (fallback) {
+        // When modules are not available (e.g. file:// or improper server), ensure fallback CSS is enabled.
+        document.head.appendChild(fallback);
+      }
+    }
+
+    if (window.location.protocol === 'file:') {
+      console.warn('You are viewing the site using the file:// protocol. Use `npm run dev` or `npm run preview` to serve the site; otherwise module imports (SCSS/JS) may fail with MIME type errors.');
+      ensureFallbackStyles();
+    }
+  </script>
 
 </body>
 </html>

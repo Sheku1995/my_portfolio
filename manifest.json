@@ -1,0 +1,15 @@
+{
+  "name": "Sheku Alpha Kamara - Portfolio",
+  "short_name": "Sheku",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffb433",
+  "icons": [
+    {
+      "src": "images/g1.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}

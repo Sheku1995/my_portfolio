@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="titleDesc">
+  <title id="titleDesc">Sheku Alpha Kamara logo</title>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffb703"/>
+      <stop offset="100%" stop-color="#fb8500"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="20" fill="url(#g)"/>
+  <text x="50%" y="58%" text-anchor="middle" font-family="Poppins, system-ui, sans-serif" font-weight="700" font-size="44" fill="#081426">SAK</text>
+</svg>
