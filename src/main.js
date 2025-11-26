@@ -35,27 +35,42 @@ function initTheme() {
 function initMobileMenu() {
 	const menuToggle = document.getElementById('menu-toggle');
 	const mobileMenu = document.getElementById('mobile-menu');
+	const overlay = document.getElementById('menu-overlay');
 	if (!menuToggle || !mobileMenu) return;
+
+	function openMenu() {
+		menuToggle.setAttribute('aria-expanded', 'true');
+		mobileMenu.removeAttribute('hidden');
+		if (overlay) overlay.removeAttribute('hidden');
+		document.documentElement.classList.add('no-scroll');
+		const firstLink = mobileMenu.querySelector('a');
+		if (firstLink) firstLink.focus();
+	}
+
+	function closeMenu() {
+		menuToggle.setAttribute('aria-expanded', 'false');
+		mobileMenu.setAttribute('hidden', '');
+		if (overlay) overlay.setAttribute('hidden', '');
+		document.documentElement.classList.remove('no-scroll');
+		menuToggle.focus();
+	}
+
 	menuToggle.addEventListener('click', () => {
 		const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-		menuToggle.setAttribute('aria-expanded', String(!expanded));
-		if (mobileMenu.hasAttribute('hidden')) {
-			mobileMenu.removeAttribute('hidden');
-			// Focus first nav link for accessibility
-			const firstLink = mobileMenu.querySelector('a');
-			if (firstLink) firstLink.focus();
-		} else {
-			mobileMenu.setAttribute('hidden', '');
-		}
+		if (expanded) closeMenu(); else openMenu();
 	});
+
 	// Close menu when a link is clicked
 	mobileMenu.addEventListener('click', (e) => {
 		if (e.target.tagName === 'A') {
-			mobileMenu.setAttribute('hidden', '');
-			menuToggle.setAttribute('aria-expanded', 'false');
-			menuToggle.focus();
+			closeMenu();
 		}
 	});
+
+	// allow clicking the overlay to close
+	if (overlay) {
+		overlay.addEventListener('click', closeMenu);
+	}
 }
 
 function initSmoothScroll() {
@@ -75,9 +90,12 @@ function initSmoothScroll() {
 				// close mobile menu if open
 				const mobileMenu = document.getElementById('mobile-menu');
 				const menuToggle = document.getElementById('menu-toggle');
+				const overlay = document.getElementById('menu-overlay');
 				if (mobileMenu && !mobileMenu.hasAttribute('hidden')) {
 					mobileMenu.setAttribute('hidden', '');
 					if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+					if (overlay) overlay.setAttribute('hidden', '');
+					document.documentElement.classList.remove('no-scroll');
 				}
 			}
 		});

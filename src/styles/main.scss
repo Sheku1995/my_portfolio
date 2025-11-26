@@ -244,6 +244,23 @@ a:focus, button:focus, input:focus, textarea:focus { box-shadow: 0 0 0 4px rgba(
   * { transition: none !important; animation: none !important; }
 }
 
+/* Mobile menu overlay (dimming backdrop) */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11,18,32,0.48);
+  opacity: 0;
+  transition: opacity .28s ease;
+  z-index: 45;
+  pointer-events: none;
+}
+.menu-overlay:not([hidden]) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+:root.no-scroll, html.no-scroll, body.no-scroll { overflow: hidden !important; touch-action: none; }
+
 /* Decorative animated SVG in hero (subtle) */
 .hero .decor-svg { position: absolute; right: 6%; top: 12%; width: 110px; opacity: .12; transform-origin: center; }
 .hero .decor-svg .float { animation: floaty 6s ease-in-out infinite; }

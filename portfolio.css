@@ -218,3 +218,20 @@ p { font-size: 1.05rem; line-height: 1.65; color: var(--text); }
 
 /* Favicons and icon polish note: keep ARIA-friendly icons in markup using bootstrap icons already linked in head */
 
+/* Mobile menu overlay (dimming backdrop) */
+.menu-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(11,18,32,0.48);
+	opacity: 0;
+	transition: opacity .28s ease;
+	z-index: 45;
+	pointer-events: none;
+}
+.menu-overlay:not([hidden]) {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+:root.no-scroll, html.no-scroll, body.no-scroll { overflow: hidden !important; touch-action: none; }
+

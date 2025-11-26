@@ -85,6 +85,7 @@
       </ul>
     </div>
   </header>
+  <div id="menu-overlay" class="menu-overlay" hidden aria-hidden="true"></div>
 
   <main id="main">
     <section id="home" class="hero section" aria-label="Introduction">
@@ -384,21 +385,74 @@
       }
     })();
   </script>
-  <script type="module" src="src/main.js"></script>
   <script>
-    // If user opens index.html via file://, Vite modules won't load and you'll see MIME errors.
-    function ensureFallbackStyles() {
-      const fallback = document.getElementById('fallback-stylesheet');
-      if (fallback) {
-        // When modules are not available (e.g. file:// or improper server), ensure fallback CSS is enabled.
-        document.head.appendChild(fallback);
+    (function () {
+      function ensureFallbackStyles() {
+        const fallback = document.getElementById('fallback-stylesheet');
+        if (fallback && !document.head.contains(fallback)) {
+          document.head.appendChild(fallback);
+        }
       }
-    }
 
-    if (window.location.protocol === 'file:') {
-      console.warn('You are viewing the site using the file:// protocol. Use `npm run dev` or `npm run preview` to serve the site; otherwise module imports (SCSS/JS) may fail with MIME type errors.');
-      ensureFallbackStyles();
-    }
+      // If opened via file://, don't attempt to load modules — enable fallback CSS.
+      if (window.location.protocol === 'file:') {
+        console.warn('Viewing via file:// — skipping module load. Use `npm run dev` or `npm run preview` to serve the site.');
+        ensureFallbackStyles();
+        return;
+      }
+
+      // Before injecting the module, probe the stylesheet import that the module
+      // would request. If the server serves the SCSS with a non-JS MIME type
+      // (e.g. text/x-scss), we must not load the module because the browser
+      // will attempt to import the SCSS as a JS module and fail with a MIME error.
+      (function probeAndLoad() {
+        const scssPath = 'src/styles/main.scss';
+
+        // Try a HEAD request first to read content-type without downloading the file body.
+        fetch(scssPath, { method: 'HEAD' }).then((res) => {
+          const ct = res.headers.get('content-type') || '';
+          const servesScss = /scss|sass/i.test(ct) || ct.indexOf('text/x-scss') !== -1;
+          if (servesScss) {
+            console.warn('Server serves SCSS directly (Content-Type:', ct, '). Using fallback CSS.');
+            ensureFallbackStyles();
+            return;
+          }
+
+          // Safe to inject the module — server does not expose SCSS with a scss MIME type.
+          const mod = document.createElement('script');
+          mod.type = 'module';
+          mod.src = 'src/main.js';
+          mod.onerror = function (e) {
+            console.warn('Module failed to load — enabling fallback stylesheet.', e);
+            ensureFallbackStyles();
+          };
+          document.head.appendChild(mod);
+        }).catch(() => {
+          // If HEAD is not allowed or probe fails, fall back to a small GET probe.
+          fetch(scssPath, { method: 'GET', headers: { 'Range': 'bytes=0-0' } }).then((r2) => {
+            const ct2 = r2.headers.get('content-type') || '';
+            const servesScss2 = /scss|sass/i.test(ct2) || ct2.indexOf('text/x-scss') !== -1;
+            if (servesScss2) {
+              console.warn('Server serves SCSS directly (Content-Type:', ct2, '). Using fallback CSS.');
+              ensureFallbackStyles();
+              return;
+            }
+            const mod2 = document.createElement('script');
+            mod2.type = 'module';
+            mod2.src = 'src/main.js';
+            mod2.onerror = function (e) {
+              console.warn('Module failed to load — enabling fallback stylesheet.', e);
+              ensureFallbackStyles();
+            };
+            document.head.appendChild(mod2);
+          }).catch((err) => {
+            // Give up probing — enable fallback to be safe.
+            console.warn('Could not probe SCSS import; enabling fallback stylesheet.', err);
+            ensureFallbackStyles();
+          });
+        });
+      })();
+    })();
   </script>
 
 </body>
