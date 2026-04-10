@@ -8,25 +8,25 @@
   <meta name="google-site-verification" content="qNuSba0Y-R8o_clHYZGLHsKaSLcza6_7ppt4DYFtFzM" />
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Portfolio website of Sheku Alpha Kamara showcasing web development skills, personal projects, and contact information.">
-  <meta name="keywords" content="Sheku Alpha Kamara, portfolio, web developer, front-end developer, JavaScript, HTML, CSS, Sierra Leone developer">
+  <meta name="description" content="Portfolio of Sheku Alpha Kamara — Full-Stack Developer and founder building modern web products with SvelteKit, TypeScript, Node.js, React and more.">
+  <meta name="keywords" content="Sheku Alpha Kamara, portfolio, full-stack developer, SvelteKit, TypeScript, Node.js, React, JavaScript, Sierra Leone developer">
   <meta name="author" content="Sheku Alpha Kamara">
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Sheku Alpha Kamara - Web Developer Portfolio">
-  <meta property="og:description" content="Explore the portfolio of Sheku Alpha Kamara — a passionate front-end developer from Sierra Leone. See projects, skills, and get in touch.">
+  <meta property="og:title" content="Sheku Alpha Kamara — Full-Stack Developer &amp; Co-Founder">
+  <meta property="og:description" content="Explore the portfolio of Sheku Alpha Kamara — a full-stack developer and founder from Sierra Leone. See projects, skills, and get in touch.">
   <meta property="og:image" content="https://sheku1995.github.io/my_portfolio/images/g1.jpg"> 
   <meta property="og:url" content="https://sheku1995.github.io/my_portfolio/">
   <meta property="og:type" content="website">
 
   <!-- Twitter Meta -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sheku Alpha Kamara - Web Developer Portfolio">
-  <meta name="twitter:description" content="A showcase of Sheku Alpha Kamara’s projects, skills, and web development journey.">
+  <meta name="twitter:title" content="Sheku Alpha Kamara — Full-Stack Developer &amp; Co-Founder">
+  <meta name="twitter:description" content="A showcase of Sheku Alpha Kamara's full-stack projects, company work, and web development journey.">
   <meta name="twitter:image" content="https://sheku1995.github.io/my_portfolio/images/g1.jpg"> 
 
   <!-- Title -->
-  <title>Sheku Alpha Kamara</title>
+  <title>Sheku Alpha Kamara — Full-Stack Developer &amp; Co-Founder, Lion-Code Innovation</title>
 
   <!-- Favicon and manifest -->
   <link rel="icon" href="favicon.png" type="image/png">
@@ -41,7 +41,7 @@
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -60,12 +60,14 @@
   <link rel="stylesheet" href="portfolio.css" id="fallback-stylesheet">
 </head>
 <body class="theme-light">
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="logo" href="#home" aria-label="Home - Sheku Alpha Kamara">Sheku<span class="logo-accent">.</span></a>
       <nav class="primary-nav" role="navigation" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -79,6 +81,7 @@
     <div id="mobile-menu" class="mobile-menu" hidden>
       <ul class="mobile-nav-list">
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -91,13 +94,14 @@
     <section id="home" class="hero section" aria-label="Introduction">
       <div class="container hero-inner">
         <div class="hero-copy">
+          <span class="hero-badge"><span class="badge-dot"></span> Founder &amp; Full-Stack Dev · <a href="https://lioncodeinnovation.com" target="_blank" rel="noopener noreferrer" class="badge-link">Lion-Code Innovation</a></span>
           <h1 class="hero-title">Hi, I'm Sheku</h1>
-          <p class="hero-sub">Front-end developer building modern, accessible, and high-performance web experiences.</p>
-          <p class="hero-ctas">
+          <p class="hero-sub">Full-stack developer &amp; founder building scalable, modern web products — from pixel-perfect UIs to robust server-side systems.</p>
+          <div class="hero-ctas">
             <a class="btn primary" href="#projects"><i class="bi bi-eye" aria-hidden="true"></i> See Work</a>
-            <a class="btn ghost" href="#contact"><i class="bi bi-person-plus" aria-hidden="true"></i> Hire Me</a>
+            <a class="btn ghost" href="#contact"><i class="bi bi-building" aria-hidden="true"></i> Work With Us</a>
             <a class="btn outline resume-btn" href="resume.pdf" target="_blank" rel="noopener noreferrer"><i class="bi bi-download" aria-hidden="true"></i> Resume</a>
-          </p>
+          </div>
           <div class="social-links" aria-hidden="false">
             <a href="https://www.github.com/sheku1995" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
             <a href="https://www.linkedin.com/in/sheku-alpha-kamara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
@@ -115,7 +119,7 @@
           </svg>
           <picture>
             <source srcset="images/optimized/g1-1200.webp" type="image/webp" media="(min-width:800px)">
-            <img src="images/g1.jpg" alt="Portrait of Sheku Alpha Kamara" class="hero-photo" loading="lazy">
+            <img src="images/g1.jpg" alt="Portrait of Sheku Alpha Kamara" class="hero-photo" loading="eager" fetchpriority="high">
           </picture>
         </div>
       </div>
@@ -125,18 +129,25 @@
       <div class="container grid about-grid">
         <div class="about-text">
           <h2>About Me</h2>
-          <p class="lead">Self-taught front-end developer focused on performance, accessibility, and delightful UI.</p>
-          <p>I build responsive interfaces with HTML, CSS/SCSS and JavaScript. I love solving problems and shipping production-ready code.</p>
-          <p>Available for freelance work and collaborations. Based in Freetown, Sierra Leone.</p>
-          <p><a class="btn outline" href="mailto:kamarasheku1@outlook.com">Email Me</a></p>
+          <p class="lead">Full-stack developer and co-founder of <a href="https://lioncodeinnovation.com" target="_blank" rel="noopener noreferrer" class="inline-link">Lion-Code Innovation</a> — a full-service IT company transforming businesses through technology.</p>
+          <p>I design and engineer complete web solutions — from responsive, pixel-perfect front-ends to scalable back-end APIs and databases. At Lion-Code we partner with clients across West Africa and beyond to deliver software, digital transformation, and cloud services.</p>
+          <p>Founded in 2025, based in Freetown, Sierra Leone. Building for the web, globally.</p>
+          <div class="about-ctas">
+            <a class="btn primary" href="https://lioncodeinnovation.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-building" aria-hidden="true"></i> Our Company</a>
+            <a class="btn outline" href="#contact">Get In Touch</a>
+          </div>
         </div>
         <div class="about-stats">
           <ul class="skills-list">
-            <li>HTML & CSS</li>
-            <li>JavaScript (ES6+)</li>
-            <li>React</li>
-            <li>SCSS</li>
-            <li>Performance & SEO</li>
+            <li><i class="bi bi-filetype-html" aria-hidden="true"></i> HTML &amp; CSS</li>
+            <li><i class="bi bi-filetype-js" aria-hidden="true"></i> JavaScript (ES6+)</li>
+            <li><i class="bi bi-filetype-tsx" aria-hidden="true"></i> TypeScript</li>
+            <li><i class="bi bi-code-slash" aria-hidden="true"></i> React</li>
+            <li><i class="bi bi-fire" aria-hidden="true"></i> SvelteKit</li>
+            <li><i class="bi bi-server" aria-hidden="true"></i> Node.js</li>
+            <li><i class="bi bi-palette2" aria-hidden="true"></i> SCSS</li>
+            <li><i class="bi bi-speedometer" aria-hidden="true"></i> Performance &amp; SEO</li>
+            <li><i class="bi bi-git" aria-hidden="true"></i> Git &amp; GitHub</li>
           </ul>
         </div>
       </div>
@@ -144,44 +155,64 @@
 
     <section id="experience" class="section panel" aria-label="Experience">
       <div class="container">
-        <h2 class="section-title"><i class="bi bi-tools" aria-hidden="true"></i> Experience & Tools</h2>
-        <p class="lead">Technologies and platforms I use regularly in projects — from rapid prototypes to production apps.</p>
+        <h2 class="section-title"><i class="bi bi-tools" aria-hidden="true"></i> Experience &amp; Tools</h2>
+        <p class="lead">Technologies I use across the full stack at Lion-Code Innovation — from UI to APIs, databases, and deployment.</p>
         <div class="cards-grid experience-grid">
           <div class="card experience-card">
+            <div class="card-head"><i class="bi bi-fire" aria-hidden="true"></i></div>
+            <h4>SvelteKit</h4>
+            <p class="muted">Building full-stack web apps with SvelteKit — SSR, SPA, API routes, and file-based routing for fast, modern web experiences.</p>
+            <div class="exp-tags">
+              <span class="tag"><i class="bi bi-layers"></i> SSR</span>
+              <span class="tag"><i class="bi bi-diagram-3"></i> Routing</span>
+              <span class="tag"><i class="bi bi-lightning-charge"></i> Fast</span>
+            </div>
+          </div>
+          <div class="card experience-card">
+            <div class="card-head"><i class="bi bi-filetype-tsx" aria-hidden="true"></i></div>
+            <h4>TypeScript</h4>
+            <p class="muted">Writing scalable, type-safe JavaScript across both the front-end and back-end — reducing bugs and improving team-wide code quality.</p>
+            <div class="exp-tags">
+              <span class="tag"><i class="bi bi-shield-check"></i> Type-safe</span>
+              <span class="tag"><i class="bi bi-gear-fill"></i> Scalable</span>
+            </div>
+          </div>
+          <div class="card experience-card">
+            <div class="card-head"><i class="bi bi-server" aria-hidden="true"></i></div>
+            <h4>Node.js</h4>
+            <p class="muted">Building REST APIs and server-side logic with Node.js and Express — powering back-end services, authentication, and database integrations.</p>
+            <div class="exp-tags">
+              <span class="tag"><i class="bi bi-diagram-2"></i> REST APIs</span>
+              <span class="tag"><i class="bi bi-shield-lock"></i> Auth</span>
+              <span class="tag"><i class="bi bi-database"></i> DB</span>
+            </div>
+          </div>
+          <div class="card experience-card">
             <div class="card-head"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i></div>
-            <h4>Firebase</h4>
-            <p class="muted">Realtime database, Firestore, Authentication, Hosting, and cloud functions — used to add realtime features, serverless backends, and auth for prototypes and production apps.</p>
+            <h4>Firebase &amp; Supabase</h4>
+            <p class="muted">Realtime database, Firestore, Authentication, Hosting, and Cloud Functions — plus Supabase for PostgreSQL-backed, open-source backend power.</p>
             <div class="exp-tags">
               <span class="tag"><i class="bi bi-database"></i> Firestore</span>
               <span class="tag"><i class="bi bi-shield-lock"></i> Auth</span>
-              <span class="tag"><i class="bi bi-cloud-upload"></i> Hosting</span>
+              <span class="tag"><i class="bi bi-grid-3x3"></i> Supabase</span>
+            </div>
+          </div>
+          <div class="card experience-card">
+            <div class="card-head"><i class="bi bi-code-slash" aria-hidden="true"></i></div>
+            <h4>React</h4>
+            <p class="muted">Component-driven UIs with React — hooks, context, and modern patterns for building dynamic, maintainable front-end applications.</p>
+            <div class="exp-tags">
+              <span class="tag"><i class="bi bi-box"></i> Components</span>
+              <span class="tag"><i class="bi bi-arrow-repeat"></i> Hooks</span>
             </div>
           </div>
           <div class="card experience-card">
             <div class="card-head"><i class="bi bi-window-sidebar" aria-hidden="true"></i></div>
             <h4>Electron</h4>
-            <p class="muted">Desktop application development with Electron — packaging web apps into cross-platform native apps and integrating native OS features when needed.</p>
+            <p class="muted">Cross-platform desktop application development with Electron — packaging web technologies into native apps with OS-level integrations.</p>
             <div class="exp-tags">
               <span class="tag"><i class="bi bi-window"></i> Desktop</span>
               <span class="tag"><i class="bi bi-box-seam"></i> Packaging</span>
-            </div>
-          </div>
-          <div class="card experience-card">
-            <div class="card-head"><i class="bi bi-bootstrap-fill" aria-hidden="true"></i></div>
-            <h4>Bootstrap & UI</h4>
-            <p class="muted">Rapid responsive UI composition and utility-driven prototyping when projects require fast turnarounds.</p>
-            <div class="exp-tags">
-              <span class="tag"><i class="bi bi-phone"></i> Responsive</span>
-              <span class="tag"><i class="bi bi-brush"></i> Components</span>
-            </div>
-          </div>
-          <div class="card experience-card">
-            <div class="card-head"><i class="bi bi-code-slash" aria-hidden="true"></i></div>
-            <h4>Modern JS</h4>
-            <p class="muted">ES6+, module tooling, and accessibility-first interactions to deliver fast, maintainable front-ends.</p>
-            <div class="exp-tags">
-              <span class="tag"><i class="bi bi-terminal-fill"></i> ES6+</span>
-              <span class="tag"><i class="bi bi-gear-fill"></i> Tooling</span>
             </div>
           </div>
         </div>
@@ -190,73 +221,83 @@
 
     <section id="projects" class="section panel" aria-label="Projects">
       <div class="container">
-        <h2 class="section-title"><i class="bi bi-kanban" aria-hidden="true"></i> Selected Projects</h2>
+        <h2 class="section-title"><i class="bi bi-kanban" aria-hidden="true"></i> Projects</h2>
+        <p class="lead">A curated showcase of products and solutions built by our team at <a href="https://lioncodeinnovation.com" target="_blank" rel="noopener noreferrer" class="inline-link">Lion-Code Innovation</a>.</p>
         <div class="projects-grid" id="projects-grid">
-          <!-- Project cards; kept existing links and descriptions -->
+
           <article class="project-card">
-            <img src="WE.png" alt="Weather Vibe screenshot" loading="lazy">
-            <div class="project-overlay" aria-hidden="true">
-              <p class="overlay-text">Real-time weather updates with a five-day forecast.</p>
-              <a class="btn small overlay-link" href="https://sheku1995.github.io/local-weather-app/" target="_blank" rel="noopener noreferrer">Open Demo</a>
+            <div class="project-card-header">
+              <div class="project-icon-wrap"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i></div>
+              <div class="project-type-badge">School Management SaaS</div>
             </div>
             <div class="project-body">
-              <h3>Weather Vibe</h3>
+              <h3>Salone SMS</h3>
+              <p>A smart digital school management platform built by Sierra Leoneans for Sierra Leone — covering enrollment, attendance, grades, assignments, transportation, and AI-powered leadership insights via Google Gemini.</p>
               <div class="project-meta">
-                <span class="tag small"><i class="bi bi-cloud-sun"></i> OpenWeather API</span>
-                <span class="tag small"><i class="bi bi-code-slash"></i> JavaScript</span>
+                <span class="tag small"><i class="bi bi-fire"></i> SvelteKit</span>
+                <span class="tag small"><i class="bi bi-lightning-charge-fill"></i> Firebase</span>
+                <span class="tag small"><i class="bi bi-robot"></i> AI Analytics</span>
+                <span class="tag small"><i class="bi bi-people-fill"></i> 6 Role Portals</span>
               </div>
-              <p>A weather application that provides real-time weather updates and a five-day forecast.</p>
-              <a class="btn small" href="https://sheku1995.github.io/local-weather-app/" target="_blank" rel="noopener noreferrer">View Project <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+              <div class="project-stats">
+                <span class="project-stat"><strong>12+</strong> Modules</span>
+                <span class="project-stat"><strong>6</strong> Role Portals</span>
+                <span class="project-stat"><strong>AI</strong> Powered</span>
+              </div>
+              <a class="btn small primary" href="https://salonesms.com" target="_blank" rel="noopener noreferrer">Visit Site <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
             </div>
           </article>
+
           <article class="project-card">
-            <img src="BC.png" alt="Bootcamp website screenshot" loading="lazy">
-            <div class="project-overlay" aria-hidden="true">
-              <p class="overlay-text">Informational site for local coding bootcamps and events.</p>
-              <a class="btn small overlay-link" href="https://sheku1995.github.io/salone-coding-academy/" target="_blank" rel="noopener noreferrer">Open Demo</a>
+            <div class="project-card-header">
+              <div class="project-icon-wrap"><i class="bi bi-truck" aria-hidden="true"></i></div>
+              <div class="project-type-badge">Freight &amp; Logistics Platform</div>
             </div>
             <div class="project-body">
-              <h3>Bootcamp Website</h3>
+              <h3>NB Logistics (NB LMS)</h3>
+              <p>A custom-built logistics management system powering NB Logistics — Sierra Leone's trusted freight company. Covers real-time trip tracking, automated invoicing, driver performance monitoring, and an offline-capable PWA.</p>
               <div class="project-meta">
-                <span class="tag small"><i class="bi bi-file-earmark-code"></i> HTML/CSS</span>
-                <span class="tag small"><i class="bi bi-paint-bucket"></i> Design</span>
+                <span class="tag small"><i class="bi bi-fire"></i> SvelteKit</span>
+                <span class="tag small"><i class="bi bi-lightning-charge-fill"></i> Firebase</span>
+                <span class="tag small"><i class="bi bi-phone"></i> PWA</span>
+                <span class="tag small"><i class="bi bi-receipt"></i> Auto-invoicing</span>
               </div>
-              <p>Local bootcamp website that provides information about coding bootcamps.</p>
-              <a class="btn small" href="https://sheku1995.github.io/salone-coding-academy/" target="_blank" rel="noopener noreferrer">View Project <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+              <div class="project-stats">
+                <span class="project-stat"><strong>20+</strong> Vehicles</span>
+                <span class="project-stat"><strong>Real-time</strong> Tracking</span>
+                <span class="project-stat"><strong>Offline</strong> PWA</span>
+              </div>
+              <a class="btn small primary" href="https://nb-sl.com" target="_blank" rel="noopener noreferrer">Visit Site <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
             </div>
           </article>
+
           <article class="project-card">
-            <img src="to-do-list.png" alt="Todo app screenshot" loading="lazy">
-            <div class="project-overlay" aria-hidden="true">
-              <p class="overlay-text">Small productivity app using localStorage and simple state management.</p>
-              <a class="btn small overlay-link" href="https://sheku1995.github.io/Todo-Listign-App/" target="_blank" rel="noopener noreferrer">Open Demo</a>
+            <div class="project-card-header">
+              <div class="project-icon-wrap"><i class="bi bi-building-fill-gear" aria-hidden="true"></i></div>
+              <div class="project-type-badge">University Academic Platform</div>
             </div>
             <div class="project-body">
-              <h3>Todo App</h3>
+              <h3>DeptHub</h3>
+              <p>A comprehensive multi-tenant departmental management platform for universities in Sierra Leone. Features 10+ role-based access levels, AI-powered analytics, automated transcript generation, and full student lifecycle management.</p>
               <div class="project-meta">
-                <span class="tag small"><i class="bi bi-list-task"></i> Local Storage</span>
-                <span class="tag small"><i class="bi bi-brush"></i> UI</span>
+                <span class="tag small"><i class="bi bi-fire"></i> SvelteKit</span>
+                <span class="tag small"><i class="bi bi-database"></i> Supabase</span>
+                <span class="tag small"><i class="bi bi-robot"></i> AI Analytics</span>
+                <span class="tag small"><i class="bi bi-phone"></i> PWA</span>
               </div>
-              <p>Simple todo application with local storage.</p>
-              <a class="btn small" href="https://sheku1995.github.io/Todo-Listign-App/" target="_blank" rel="noopener noreferrer">View Project <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+              <div class="project-stats">
+                <span class="project-stat"><strong>10+</strong> User Roles</span>
+                <span class="project-stat"><strong>AI</strong> Analytics</span>
+                <span class="project-stat"><strong>Multi-tenant</strong></span>
+              </div>
+              <span class="btn small coming-soon-pill"><i class="bi bi-clock" aria-hidden="true"></i> Coming Soon</span>
             </div>
           </article>
-          <article class="project-card">
-            <img src="CT.png" alt="Chatbot screenshot" loading="lazy">
-            <div class="project-overlay" aria-hidden="true">
-              <p class="overlay-text">A lightweight local chatbot built with vanilla JavaScript.</p>
-              <a class="btn small overlay-link" href="https://sheku1995.github.io/my-ai-chatbot/" target="_blank" rel="noopener noreferrer">Open Demo</a>
-            </div>
-            <div class="project-body">
-              <h3>Local Chatbot</h3>
-              <div class="project-meta">
-                <span class="tag small"><i class="bi bi-robot"></i> JavaScript</span>
-                <span class="tag small"><i class="bi bi-chat-dots"></i> NLP (rules)</span>
-              </div>
-              <p>Chatbot built with JavaScript.</p>
-              <a class="btn small" href="https://sheku1995.github.io/my-ai-chatbot/" target="_blank" rel="noopener noreferrer">View Project <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
-            </div>
-          </article>
+
+        </div>
+        <div class="projects-footer">
+          <p class="projects-note">These are just a few of the products we've built. More work available at</p>
+          <a class="btn ghost" href="https://lioncodeinnovation.com/#work" target="_blank" rel="noopener noreferrer"><i class="bi bi-arrow-up-right-circle" aria-hidden="true"></i> See All Projects on Lion-Code</a>
         </div>
       </div>
     </section>
@@ -264,34 +305,49 @@
     <section id="services" class="section panel" aria-label="Services">
       <div class="container">
         <h2 class="section-title"><i class="bi bi-stars" aria-hidden="true"></i> Services</h2>
+        <p class="lead">What we offer at <a href="https://lioncodeinnovation.com" target="_blank" rel="noopener noreferrer" class="inline-link">Lion-Code Innovation</a> — end-to-end digital solutions for businesses of every size.</p>
         <div class="cards-grid">
           <div class="card service-card">
             <div class="service-head">
-              <span class="service-icon" aria-hidden="true"><i class="bi bi-laptop"></i></span>
-              <h4>Web Development</h4>
+              <span class="service-icon" aria-hidden="true"><i class="bi bi-laptop-fill"></i></span>
+              <h4>Web &amp; Software Development</h4>
             </div>
-            <p>Responsive, accessible websites focused on performance and progressive enhancement.</p>
+            <p>Custom web apps, e-commerce platforms, and business tools built with modern full-stack technologies — fast, scalable, and production-ready.</p>
           </div>
           <div class="card service-card">
             <div class="service-head">
               <span class="service-icon" aria-hidden="true"><i class="bi bi-palette"></i></span>
-              <h4>UI/UX Design</h4>
+              <h4>UI/UX &amp; Branding Design</h4>
             </div>
-            <p>Intuitive interfaces and rapid prototyping to validate UX before development.</p>
+            <p>Pixel-perfect interfaces, brand identity systems, logos, and print materials — making your product look sharp and consistent everywhere.</p>
           </div>
           <div class="card service-card">
             <div class="service-head">
-              <span class="service-icon" aria-hidden="true"><i class="bi bi-speedometer2"></i></span>
-              <h4>SEO & Performance</h4>
+              <span class="service-icon" aria-hidden="true"><i class="bi bi-graph-up-arrow"></i></span>
+              <h4>Digital Marketing &amp; SEO</h4>
             </div>
-            <p>Optimize for speed, accessibility, and discoverability with measurable improvements.</p>
+            <p>Get found online and grow your audience — social media management, SEO, Google &amp; Facebook ads, and targeted email campaigns.</p>
           </div>
           <div class="card service-card">
             <div class="service-head">
-              <span class="service-icon" aria-hidden="true"><i class="bi bi-people"></i></span>
-              <h4>Workshops</h4>
+              <span class="service-icon" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
+              <h4>IT Consulting &amp; Strategy</h4>
             </div>
-            <p>Hands-on training and mentorship in modern web development practices.</p>
+            <p>Free IT consultations to identify your needs, map a technology roadmap, and reduce risk — so you build the right thing, right.</p>
+          </div>
+          <div class="card service-card">
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i class="bi bi-cloud-arrow-up-fill"></i></span>
+              <h4>Cloud &amp; DevOps</h4>
+            </div>
+            <p>Deployment, hosting, CI/CD pipelines, Firebase, and Supabase integrations — keeping your apps live, secure, and running at scale.</p>
+          </div>
+          <div class="card service-card">
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i class="bi bi-people-fill"></i></span>
+              <h4>Training &amp; Workshops</h4>
+            </div>
+            <p>Hands-on mentorship and technical training in modern web development — upskilling teams and individuals across Sierra Leone.</p>
           </div>
         </div>
       </div>
@@ -301,10 +357,10 @@
       <div class="container contact-grid">
         <div class="contact-info">
           <h2><i class="bi bi-envelope-paper" aria-hidden="true"></i> Contact</h2>
-          <p class="lead">Based in Goderich, Freetown — available for freelance work.</p>
+          <p class="lead">Based in Freetown, Sierra Leone — open to partnerships, collaborations, and new projects.</p>
           <p><strong>Email:</strong> <a href="mailto:kamarasheku1@outlook.com">kamarasheku1@outlook.com</a></p>
           <p><strong>WhatsApp:</strong> <a href="https://wa.me/23276849420">+232 76 849420</a></p>
-          <p class="muted">Prefer a quick chat? Send a short message — I usually respond within 24 hours.</p>
+          <p class="muted">Have a project in mind? Send a message and we'll get back to you within 24 hours.</p>
         </div>
 
         <form id="contact-form" action="https://formspree.io/f/mldjoyao" method="POST" class="contact-form" novalidate>
@@ -320,7 +376,7 @@
 
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Briefly tell me about your project or question" required aria-required="true"></textarea>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us about your project, idea, or question" required aria-required="true"></textarea>
           </div>
 
           <div class="form-actions">
@@ -333,8 +389,18 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2024 Sheku Alpha Kamara</p>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">Sheku<span class="logo-accent">.</span></span>
+        <p class="footer-tagline">Co-founder &amp; Full-Stack Developer at <a href="https://lioncodeinnovation.com" target="_blank" rel="noopener noreferrer" class="inline-link">Lion-Code Innovation</a></p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.github.com/sheku1995" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/sheku-alpha-kamara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://wa.me/23276849420" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        <a href="mailto:kamarasheku1@outlook.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Sheku Alpha Kamara &mdash; Made with <i class="bi bi-heart-fill" style="color:var(--accent)"></i> in Freetown, Sierra Leone</p>
     </div>
   </footer>
   <!-- Bootstrap JS CDN -->
@@ -346,6 +412,23 @@
        opening the site without a Vite dev server). It deliberately avoids importing styles.
   -->
   <style> .no-scroll { overflow: hidden !important; }</style>
+  <script>
+    (function () {
+      // Scroll progress bar + header scroll state
+      try {
+        var bar = document.getElementById('scroll-progress');
+        var hdr = document.querySelector('.site-header');
+        function updateScroll() {
+          var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+          var total = document.documentElement.scrollHeight - window.innerHeight;
+          if (bar && total > 0) bar.style.width = ((scrolled / total) * 100).toFixed(2) + '%';
+          if (hdr) hdr.classList.toggle('scrolled', scrolled > 20);
+        }
+        window.addEventListener('scroll', updateScroll, { passive: true });
+        updateScroll();
+      } catch(e) {}
+    })();
+  </script>
   <script>
     (function () {
       try {

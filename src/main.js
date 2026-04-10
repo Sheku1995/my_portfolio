@@ -5,7 +5,7 @@ import TypeWriter from './typewriter.js';
 function initTypewriter() {
 	const heroTitle = document.querySelector('.hero-title');
 	if (heroTitle) {
-		new TypeWriter(heroTitle, "Hi, I'm Sheku — Front-end developer.", 60).start();
+		new TypeWriter(heroTitle, "Hi, I'm Sheku — Full-Stack Developer & Co-Founder.", 60).start();
 	}
 }
 
@@ -147,6 +147,25 @@ function initActiveNavOnScroll() {
 	findActive();
 }
 
+function initScrollProgress() {
+	const bar = document.getElementById('scroll-progress');
+	const header = document.querySelector('.site-header');
+	if (!bar && !header) return;
+
+	const onScroll = () => {
+		const scrolled = window.scrollY;
+		const total = document.documentElement.scrollHeight - window.innerHeight;
+		if (bar && total > 0) {
+			bar.style.width = ((scrolled / total) * 100).toFixed(2) + '%';
+		}
+		if (header) {
+			header.classList.toggle('scrolled', scrolled > 20);
+		}
+	};
+	window.addEventListener('scroll', onScroll, { passive: true });
+	onScroll();
+}
+
 function initContactForm() {
 	const form = document.getElementById('contact-form');
 	const statusEl = document.getElementById('contact-status');
@@ -191,5 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	initContactForm();
 	initScrollReveal();
 	initActiveNavOnScroll();
+	initScrollProgress();
 	if (window.AOS) window.AOS.init();
 });
